@@ -26,6 +26,6 @@
     "faker": "^4.1.0",
     "lodash": "^4.17.11",
     "meteor-node-stubs": "^0.4.1",
-    "simpl-schema": "^1.5.3"
+    "simpl-schema": "^1.4.3"
   }
 }

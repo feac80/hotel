@@ -7,14 +7,16 @@ import './body.html';
 import './members.html';
 import './rooms.html';
 
-window.Members = Members;
-$(document).ready(function() {
-  $('#modal').modal();
-});
+//window.Members = Members;
+// $(document).ready(function() {
+//   $('#modal').modal();
+// });
 
 Template.registerHelper('formatDate', function(date) {
   return moment(date).format('MMM Do YYYY');
 });
+
+Template.registerHelper('Members', Members);
 
 Template.body.onCreated(function() {
   Meteor.subscribe('members.allMembers');
@@ -23,7 +25,7 @@ Template.body.onCreated(function() {
 
 Template.members.helpers({
   members: function() {
-    return Members.find();
+    return Members.find({}, {sort:{createdAt:-1}});
   }
 });
 Template.rooms.helpers({
